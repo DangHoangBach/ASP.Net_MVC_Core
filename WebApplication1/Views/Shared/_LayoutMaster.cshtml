@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="row head">
+                @Html.Partial("_Head")
+
+                <div class="body">
+                    <div class="menu">
+                        @HTML.Partial("menu")
+                    </div>
+                    <div class="dropleft col-3"></div>
+                    <div class="dropright col-9"></div>
+                </div>
+                <div class="row foot">
+                    <div class="foot">
+                        @HTML.Partial("foot")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
